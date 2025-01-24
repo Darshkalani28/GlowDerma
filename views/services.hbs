@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #005bea, #00c6fb);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #e6f7ff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .unavailable {
+            opacity: 0.6;
+            background-color: #f8d7da;
+            border: 1px solid red;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .unavailable-text {
+            color: red;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 18px rgba(0, 115, 230, 0.3);
+        }
+
+        footer {
+            background-color: #003a7f;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Premium Services</h1>
+    </header>
+    <section>
+        <h2>{{category}} Services</h2>
+        <div class="card">
+            <h3>Service Name</h3>
+            <p><strong>Price:</strong> ₹500</p>
+            <p><strong>Description:</strong> Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="card unavailable">
+            <h3>Unavailable Service</h3>
+            <p><strong>Price:</strong> ₹400</p>
+            <p>This service is currently not available.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

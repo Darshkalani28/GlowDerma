@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #005bea, #00c6fb);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #e6f7ff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 18px rgba(0, 115, 230, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #0073e6;
+        }
+
+        .unavailable {
+            opacity: 0.6;
+            background-color: #f8d7da;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #003a7f;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Premium Offerings</h1>
+    </header>
+
+    <section>
+        {{#each offerings}}
+        <div class="card {{#if available}}available{{else}}unavailable{{/if}}">
+            <h3>{{name}}</h3>
+            <p><strong>Price:</strong> ₹{{price}}</p>
+            <p><strong>Duration:</strong> {{duration}}</p>
+            <p>{{description}}</p>
+            {{#unless available}}
+            <div class="unavailable">
+                <p>Currently Unavailable</p>
+            </div>
+            {{/unless}}
+        </div>
+        {{/each}}
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

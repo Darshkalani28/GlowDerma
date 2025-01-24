@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #005bea, #00c6fb);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 3rem auto;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #0073e6;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .appointment-card,
+        .offering-card,
+        .testimonial-card {
+            border: 2px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            background-color: #fff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .appointment-card:hover,
+        .offering-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 18px rgba(0, 115, 230, 0.2);
+        }
+
+        .unavailable {
+            opacity: 0.6;
+            background-color: #f8d7da;
+        }
+
+        .unavailable-text {
+            color: red;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #003a7f;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clinic Name</h1>
+    </header>
+    <section>
+        <h2>Our Expert Doctors</h2>
+        <p>Our clinic is renowned for providing top-notch medical expertise in dermatology and cosmetic treatments.</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Clinic Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
