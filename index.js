@@ -1,7 +1,32 @@
 import express from "express";
+import fs from 'fs';
+import { rateLimit } from 'express-rate-limit';
 
 const app = express();
 let PORT = 5000;
+
+// External/3rd party Middleware  
+//create a rate limit
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message : "You have exceeded the 5 requests in 15 minutes limit!"});
+
+app.use(limiter);
+
+// Middleware to use Virtual path
+app.use("/tools",express.static('assets'))
+
+
+// Middleware in logging in other server.log
+app.use((req, res, next) =>{
+    const logData = `${new Date()} | ${req.method} | ${req.url} | ${req.ip} \n`;
+    console.log(logData);
+    fs.appendFile('server.log', logData, (err)=>{
+        if (err) throw err;
+    })
+    next();  
+})
 
 //  Middleware to parse incoming JSON payload 
 app.use(express.json());
@@ -90,6 +115,11 @@ app.post("/cart", (req, res) => {
         "data": cartItem
     });
 });
+
+// Error Handling Middleware
+app.use((req, res)=> {
+  res.status(404).send("Route not found")
+})
 
 // Handle Undefined Routes
 app.get("*", (req, res) => {
